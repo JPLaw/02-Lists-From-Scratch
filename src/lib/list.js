@@ -5,13 +5,14 @@ const List = module.exports = class {
     this.length = 0;
   }
 
-  push(...args) {
-    for (let i = 0; i < args.length; i++) {
-      this[this.length] = args[i];
+  push(item) {
+    for (let i = 0; i < item.length; i++) {
+      this[this.length] = item[i];
       this.length += 1;
     }
     return this.length;
   }
+    
 
   map(callback) {
     if (typeof callback !== 'function') {
@@ -42,3 +43,4 @@ const List = module.exports = class {
   }
 };
 
+module.exports = List;
