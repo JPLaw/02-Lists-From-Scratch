@@ -1,6 +1,7 @@
-![cf](https://i.imgur.com/7v5ASc8.png) 02: Tools and Context
+02: Tools and Context
 ======
-https://travis-ci.org/JudyVue/01-TDD.svg?branch=master
+[![Build Status](https://travis-ci.org/JPLaw/02-Lists-From-Scratch.svg?branch=master)](https://travis-ci.org/JPLaw/02-Lists-From-Scratch)
+
 ## Submission Instructions
 * Work in a fork of this repository
 * Work in a branch on your fork called `lab-02`
@@ -45,5 +46,10 @@ Each `it` callback should aim to test a small, well defined, feature of a functi
   * tests to ensure that the list module functions return the correct results when invoked with valid arguments
 
 ##  Documentation
+
+This module builds basic JavaScript array manipulation methods from scratch.
+
+These array methods include push(), forEach(), map(), ilter(),  and reduce().
+
 Include your travis badge at the top of your `README.md` file
 In your `README.md`, describe the exported values of each module you have defined. Every function description should include it's airty (expected number of parameters), the expected data for each parameter (data-type and limitations), and it's behavior (for both valid and invalid use). Feel free to add any additional information in your `README.md` that you would like.
