@@ -1,4 +1,4 @@
-![cf](https://i.imgur.com/7v5ASc8.png) 02: Tools and Context
+02: Tools and Context
 ======
 [![Build Status](https://travis-ci.org/JPLaw/02-Lists-From-Scratch.svg?branch=master)](https://travis-ci.org/JPLaw/02-Lists-From-Scratch)
 

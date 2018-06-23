@@ -5,22 +5,20 @@ const List = module.exports = class {
     this.length = 0;
   }
 
-  push(item) {
-    for (let i = 0; i < item.length; i++) {
-      this[this.length] = item[i];
+  push(...args) {
+    for (let i = 0; i < args.length; i++) {
+      this[this.length] = args[i];
       this.length += 1;
     }
     return this.length;
   }
-    
 
   map(callback) {
     if (typeof callback !== 'function') {
-      throw new Error ('Expected a function');
+      throw new Error('Expected a function');
     }
-
     if (!this.length) {
-      throw new Error ('List is empty');
+      throw new Error('Empty list');
     }
     const result = new List();
     for (let i = 0; i < this.length; i++) {
@@ -30,17 +28,44 @@ const List = module.exports = class {
   }
 
   reduce(callback, accumulator) {
+    if (typeof callback !== 'function') {
+      throw new Error('Expected a function');
+    }
     if (!this.length) {
-      return undefined;
+      throw new Error('Empty list');
     }
     if (!accumulator) {
-      accumulator = this[0];
+      accumulator = this[0]; /*eslint-disable-line*/
     }
     for (let i = 0; i < this.length; i++) {
-      accumulator = callback (accumulator, this[i], i);
+      accumulator = callback(accumualtor, this[i], i); /*eslint-disable-line*/
     }
     return accumulator;
   }
-};
 
-module.exports = List;
+  filter(callback) {
+    const filtered = [];
+    if (typeof callback !== 'function') {
+      throw new Error('Expected a function');
+    }
+    if (!this.length) {
+      throw new Error('list is empty');
+    }
+    for (let i = 0; i < this.length; i++) {
+      if (callback(this[i], i, this)) filtered.push(this[i]);
+    }
+    return filtered;
+  }
+
+  forEach(callback) {
+    if (typeof callback !== 'function') {
+      throw new Error('Expected a function');
+    }
+    if (!this.length) {
+      throw new Error('list is empty');
+    }
+    for (let i = 0; i < this.length; i++) {
+      callback(this[i], i);
+    }
+  }
+};
